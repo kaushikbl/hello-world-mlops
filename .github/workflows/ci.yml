@@ -31,11 +31,11 @@ jobs:
 
       - name: train the model
         run: |
-           python train.python
+           python train.py
            ls -la artifacts
 
       - name: upload artifacts
-        uses: actions/upload-artifacts@v4
+        uses: actions/artifacts@v4
         with:
           name: ml-artifacts-${{ matrix.python }}-${{ github.run_id }}
           path: artifacts
